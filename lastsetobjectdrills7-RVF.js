@@ -43,24 +43,46 @@ characters.push(createCharacter('Aragorn son of Arathorn', 'aragorn', 'Man','Dun
 characters.push(createCharacter('Legolas', 'legolas', 'Elf', 'Woodland Realm', 'a Bow and Arrow', 8, 5));
 characters.push(createCharacter('Arwen Undomiel', 'arwen', 'Half-Elf', 'Rivendell', 'Hadhafang', 6, 6));
 
-//console.log(characters[0].describe());
-//console.log(characters[0].evaluateFight(characters[1]));
-//for (let key in characters) {
-//  console.log(characters[key].describe());
-//}
+// Describe one character:
+console.log('\n describe one character');
+console.log(characters[0].describe());
 
+
+// Describe all characters:
+console.log('\n describe all characters');
+for (let key in characters) {
+ console.log(characters[key].describe());
+}
+
+
+// Evaluate the outcome of one fight:
+console.log('\n outcome of one fight');
+console.log(characters[0].evaluateFight(characters[1]));
+
+
+// Evaluate the outcome of all possible fights:
+console.log('\n outcome of all possible fights');
+for (let i in characters) {
+  for (let j in characters) {
+    if (characters[i].name !== characters[j].name) {
+      console.log(characters[i].evaluateFight(characters[j]));
+    }
+  }  
+}
+
+
+// Use .find to fetch Aragorn and describe him:
+console.log('\n fetch Aragorn and describe');
 console.log(characters.find(e => e.nickName === 'aragorn').describe());
 
-// const raceArray = characters.filter(e => e.race === 'Hobbit');
-// console.log(raceArray);
 
-// const strongArray = characters.filter(e => e.attack > 5);
-// console.log(strongArray);
+// Use .filter to make an array of hobbits only:
+console.log('\n hobbits only');
+const raceArray = characters.filter(e => e.race === 'Hobbit');
+console.log(raceArray);
 
-// for (let i in characters) {
-//   for (let j in characters) {
-//     if (characters[i].name !== characters[j].name) {
-//       console.log(characters[i].evaluateFight(characters[j]));
-//     }
-//   }  
-// }
+
+// Use .filter to make an array of the strongest fighters:
+console.log('\n strongest fighters');
+const strongArray = characters.filter(e => e.attack > 5);
+console.log(strongArray);
