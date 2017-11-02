@@ -4,8 +4,6 @@ let name, nickName, race, origin, weapon ='';
 let attack, defense = 0;
 
 function createCharacter(nameIn, nickNameIn, raceIn, originIn, weaponIn, attackIn, defenseIn){
-  let x = 0;
-  let y = 0;
   const characters = {
     name: nameIn,
     nickName: nickNameIn,
