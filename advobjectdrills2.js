@@ -1,3 +1,5 @@
+'use strict';
+
 const studentData = [
   {
     name: 'Tim',
@@ -17,10 +19,10 @@ const studentData = [
 ];
 
 function enrollInSummerSchool(students) {
-    for(let i=0; i<students.length; i++) {
-        students[i].status = 'In Summer school';
-    }
-    return students;
+  for(let i=0; i<students.length; i++) {
+    students[i].status = 'In Summer school';
+  }
+  return students;
 }
 
 
@@ -33,50 +35,50 @@ function enrollInSummerSchool(students) {
 
 
 function testIt() {
-    var testData = [
-        {
-            name: 'Burt',
-            status: 'Playing hooky',
-            course: 'Biology'
-        },
-        {
-            name: 'Melanie',
-            status: 'Sick',
-            course: 'Mathematics'
-        },
-        {
-            name: 'Leonard',
-            status: 'AWOL',
-            course: 'Computer science'
-        }
-    ];
-
-    var results = enrollInSummerSchool(testData);
-
-    if (!(results && results instanceof Array)) {
-        console.error('FAILURE: `enrollSummerSchool` must return an array');
-        return
+  var testData = [
+    {
+      name: 'Burt',
+      status: 'Playing hooky',
+      course: 'Biology'
+    },
+    {
+      name: 'Melanie',
+      status: 'Sick',
+      course: 'Mathematics'
+    },
+    {
+      name: 'Leonard',
+      status: 'AWOL',
+      course: 'Computer science'
     }
-    var result = testData.every(function(student) {
-            var match = results.find(function(_student) {
-                    return (
-                    _student.name === student.name &&
+  ];
+
+  var results = enrollInSummerSchool(testData);
+
+  if (!(results && results instanceof Array)) {
+    console.error('FAILURE: `enrollSummerSchool` must return an array');
+    return
+  }
+  var result = testData.every(function(student) {
+    var match = results.find(function(_student) {
+      return (
+        _student.name === student.name &&
                     _student.course === student.course &&
                     _student.status.toLowerCase() === 'in summer school'
-                    );
-                }
-            );
-            return match !== undefined;
-        }
+      );
+    }
     );
-    if (!result) {
-        console.error(
-            'FAILURE: `enrollSummerSchool` should return ' +
+    return match !== undefined;
+  }
+  );
+  if (!result) {
+    console.error(
+      'FAILURE: `enrollSummerSchool` should return ' +
             'original key/value pairs for each student, and ' +
             'update `status` to "In Summer school": ' + JSON.stringify(results));
-    } else {
-          console.info('SUCCESS: `enrollSummerSchool` is working');
-    }
+  } else {
+    console.info('SUCCESS: `enrollSummerSchool` is working');
+  }
 }
 
 testIt();
