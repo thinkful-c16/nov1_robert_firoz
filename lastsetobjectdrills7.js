@@ -40,7 +40,7 @@ createCharacter('Frodo Baggins', 'frodo', 'Hobbit', 'The Shire', 3, 2, 'Barrow B
 createCharacter('Aragorn son of Arathorn', 'aragorn', 'Man', 'Dunedain', 6, 8, 'Anduril');
 createCharacter('Legolas', 'legolas', 'Elf', 'The Woodland Realm', 8, 5, 'Bow and Arrow');
 createCharacter('Arwen Undomiel', 'arry', 'Half-Elf', 'Rivendell', 8, 6, 'Hadhafang');
-createCharacter('Firoz Kamdar', 'rozey', 'baby Web Developer', 'Earth', 1, 8, 'javascript...kind of');
+createCharacter('Firoz Kamdar', 'rozey', 'baby Web Developer', 'Earth', 1, 10, 'JavaScript');
 
 //prints character object
 console.log(characters);
