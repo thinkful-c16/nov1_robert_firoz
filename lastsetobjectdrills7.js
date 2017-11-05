@@ -1,7 +1,7 @@
 'use strict';
 const characters = [];
 
-function createCharacter(name, nickName, race, origin, attack, defense){
+function createCharacter(name, nickName, race, origin, attack, defense, weapon){
   characters.push({
     name,
     nickName,
@@ -9,9 +9,10 @@ function createCharacter(name, nickName, race, origin, attack, defense){
     origin,
     attack,
     defense,
+    weapon,
     describe: function(){
       return `
-      ${this.name} is a ${this.race} from ${this.origin}`;
+      ${this.name} is a ${this.race} from ${this.origin} and uses ${this.weapon}.`;
     },
     evaluateFight: function(character){
       let x = 0;  //attack
@@ -29,27 +30,29 @@ function createCharacter(name, nickName, race, origin, attack, defense){
       } return `
       Your opponent takes ${x} damage and you receive ${y} damage.`;
     },
+    
   }); return characters;
 }
 //adds characters to empty array
-createCharacter('Gandalf the white', 'gandalf', 'Wizard', 'Middle Earth', 10, 6);
-createCharacter('Bilbo Baggins', 'bilbo', 'Hobbit', 'The Shire', 3, 2);
-createCharacter('Frodo Baggins', 'frodo', 'Hobbit', 'The Shire', 3, 2);
-createCharacter('Aragorn son of Arathorn', 'aragorn', 'Man', 'Dunedain', 6, 8);
-createCharacter('Legolas', 'legolas', 'Elf', 'The Woodland Realm', 8, 5);
-createCharacter('Arwen Undomiel', 'arry', 'Rivendell', 'Half-Elf', 8, 6);
+createCharacter('Gandalf the white', 'gandalf', 'Wizard', 'Middle Earth', 10, 6, 'a wizard staff');
+createCharacter('Bilbo Baggins', 'bilbo', 'Hobbit', 'The Shire', 3, 2, 'the ring');
+createCharacter('Frodo Baggins', 'frodo', 'Hobbit', 'The Shire', 3, 2, 'Barrow Blade');
+createCharacter('Aragorn son of Arathorn', 'aragorn', 'Man', 'Dunedain', 6, 8, 'Anduril');
+createCharacter('Legolas', 'legolas', 'Elf', 'The Woodland Realm', 8, 5, 'Bow and Arrow');
+createCharacter('Arwen Undomiel', 'arry', 'Half-Elf', 'Rivendell', 8, 6, 'Hadhafang');
+createCharacter('Firoz Kamdar', 'rozey', 'baby Web Developer', 'Earth', 1, 8, 'javascript...kind of');
 
 //prints character object
-//console.log(characters);
+console.log(characters);
 
 //prints description of one character specified by index in array
 //console.log(characters[0].describe());
 
 //prints description of all characters
 
-// for (let key in characters){
-// console.log(characters[key].describe());
-// }
+for (let key in characters){
+console.log(characters[key].describe());
+}
 
 //finds nickname aragorn and prints describe
 // function findAragorn(ranger){
