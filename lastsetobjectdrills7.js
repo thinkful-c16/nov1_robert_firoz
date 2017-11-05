@@ -9,7 +9,7 @@ function createCharacter(name, nickName, race, origin, attack, defense){
     origin,
     attack,
     defense,
-    'describe': function(){
+    describe: function(){
       return `
       ${this.name} is a ${this.race} from ${this.origin}`;
     },
@@ -26,7 +26,8 @@ function createCharacter(name, nickName, race, origin, attack, defense){
         y = 0;
       } else {
         y = character.attack - this.defense;
-      } return `Your opponent takes ${x} damage and you receive ${y} damage.`;
+      } return `
+      Your opponent takes ${x} damage and you receive ${y} damage.`;
     },
   }); return characters;
 }
@@ -39,7 +40,7 @@ createCharacter('Legolas', 'legolas', 'Elf', 'The Woodland Realm', 8, 5);
 createCharacter('Arwen Undomiel', 'arry', 'Rivendell', 'Half-Elf', 8, 6);
 
 //prints character object
-console.log(characters);
+//console.log(characters);
 
 //prints description of one character specified by index in array
 //console.log(characters[0].describe());
@@ -61,11 +62,13 @@ console.log(characters);
 // is provided from point of view from first index entered 
 // console.log(characters[3].evaluateFight(characters[0]));
 
-let filterHobbits = characters.filter(function(hobbit){
-  return hobbit.race ==='Hobbit';
+//filter hobbis
+const filterHobbits = characters.filter(function(hobbit) {
+  return (hobbit.race === 'Hobbit');
+  
 });
-console.log(filterHobbits);
 
+console.log(filterHobbits);
 
 
 
