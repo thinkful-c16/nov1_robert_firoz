@@ -62,13 +62,16 @@ createCharacter('Arwen Undomiel', 'arry', 'Rivendell', 'Half-Elf', 8, 6);
 // is provided from point of view from first index entered 
 // console.log(characters[3].evaluateFight(characters[0]));
 
-//filter hobbis
-const filterHobbits = characters.filter(function(hobbit) {
-  return (hobbit.race === 'Hobbit');
+//filter hobbits
+//const filterHobbits = characters.filter(function(hobbit) {
+//   return (hobbit.race === 'Hobbit');
   
-});
+// });
 
-console.log(filterHobbits);
-
-
+// console.log(filterHobbits);
+// // attack value of 5 or higher filter
+// const attFiveHigher = characters.filter(function(fiveplus) {
+//   return (fiveplus.attack > 5);
+// });
+// console.log(attFiveHigher);
 
